@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+	<link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <style>
+        /* Add CSS styles here */
+    </style>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12;
+            h = h ? h : 12; // the hour '0' should be '12'
+            m = checkTime(m);
+            document.getElementById('txt').innerHTML = h + ":" + m + " " + ampm;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};
+            return i;
+        }
+    </script>
+</head>
+
+<div class="main-container">
+<body onload="startTime()">
+
+    <!-- Header -->
+    <header>
+        <div id="txt"></div>
+        <!-- <div class="logo">Logo</div>-->
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Photo">
+        <div id="intro">
+                <p>Hi, I'm Parker, a Chinese Canadian thriving in the world of product management. With over six years in the tech realm, my journey has been enriched by a blend of visual creativity 
+                and a sharp sense for data-driven insights, navigating through various tech sectors.</p>
+                <!--<br /> -->
+                <p>Out of work, I like travelling, watching movies, playing guitar,
+                or just taking in the day-to-day rhythms of city life. I find richness in the ordinary. </p>
+                <!--<br /> -->
+                <p>If you're up for a chat about tech trends, collaborative ideas, 
+                or just everyday adventures, I'm all ears. Let's connect and share perspectives!</p>
+        </div>
+        <button>Download Resume</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Parker Song. All rights reserved.</p>
+        <!--<nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>-->
+        <!-- Social media links -->
+    </footer>
+
+</div>
+    <script src="site.js">
+    </script>
+</body>
+</html>

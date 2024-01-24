@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+	<link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <style>
+        /* Add CSS styles here */
+    </style>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12;
+            h = h ? h : 12; // the hour '0' should be '12'
+            m = checkTime(m);
+            document.getElementById('txt').innerHTML = h + ":" + m + " " + ampm;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};
+            return i;
+        }
+    </script>
+</head>
+
+<div class="main-container">
+<body onload="startTime()">
+
+    <!-- Header -->
+    <header>
+        <div id="txt"></div>
+        <!-- <div class="logo">Logo</div>-->
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="text">
+                <h1>Parker Song</h1>
+                <div id="animated-text-container">
+                    <p id="animated-text"></p>
+                </div>
+                <p class="small-text">Data's Vision, Design's Touch: Building Products for Smarter Living.</p>
+                <a href="https://www.linkedin.com/in/heping-song/" target="_blank">
+                    <img src="images/home/linkedin.png" alt="View Portfolio" id="portfolio-button">
+                </a>
+            </div>
+            <div class="image">
+                <img src="images/home/pic1.jpg" alt="Descriptive Text">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="skills-header">
+                <h3>My skills</h3>
+            </div>
+            <div class="skills-content">
+                <div class="skills-text">
+                    <h2>Building products for smarter life</h2>
+                    <div class="skills-text-inner">
+                        <p class="skills-intro">Experienced in tech sectors like eCommerce, my product management blends technical insight with user experience focus. Agile and market-responsive, I prioritize user-centric development.</p>
+                    </div>
+                </div>
+                <div class="skills-boxes">
+                    <div class="skills-item">
+                        <img src="path-to-your-product-strategy-image.png" alt="Product Strategy">
+                        <h3>Product Strategy</h3>
+                        <p>Roadmapping, A/B Tests, Project Management</p>
+                    </div>
+                    <div class="skills-item">
+                        <img src="path-to-your-product-design-image.png" alt="Product Design">
+                        <h3>Product Design</h3>
+                        <p>User Stories, User Flows, Wireframes, Persona Writing</p>
+                    </div>
+                    <div class="skills-item">
+                        <img src="path-to-your-product-strategy-image.png" alt="Product Strategy">
+                        <h3>Market & User Research</h3>
+                        <p>Market Analysis, Experiment Design, Usability Testing</p>
+                    </div>
+                    <div class="skills-item">
+                        <img src="path-to-your-product-strategy-image.png" alt="Product Strategy">
+                        <h3>Analytics & Programming</h3>
+                        <p>Software Development and Management</p>
+                    </div>
+                    <!-- Add more skill items as needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Photo">
+        <div id="intro">
+                <p>Hi, I'm Parker, a Chinese Canadian thriving in the world of product management. With over six years in the tech realm, my journey has been enriched by a blend of visual creativity 
+                and a sharp sense for data-driven insights, navigating through various tech sectors.</p>
+                <!--<br /> -->
+                <p>Out of work, I like travelling, watching movies, playing guitar,
+                or just taking in the day-to-day rhythms of city life. I find richness in the ordinary. </p>
+                <!--<br /> -->
+                <p>If you're up for a chat about tech trends, collaborative ideas, 
+                or just everyday adventures, I'm all ears. Let's connect and share perspectives!</p>
+        </div>
+        <button>Download Resume</button>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-item">
+            <img src="project1.jpg" alt="Project 1">
+            <p>Project 1 Description</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="project2.jpg" alt="Project 2">
+            <p>Project 2 Description</p>
+        </div>
+        <!-- More portfolio items -->
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p>"This is a testimonial from a client or colleague."</p>
+            <p>- Person's Name</p>
+        </div>
+        <!-- More testimonials -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Parker Song. All rights reserved.</p>
+        <!--<nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>-->
+        <!-- Social media links -->
+    </footer>
+
+</div>
+    <script src="site.js">
+    </script>
+</body>
+</html>

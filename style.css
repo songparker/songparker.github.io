@@ -1,0 +1,428 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    margin:0;
+}
+
+.main-container {
+    width: 80%; /* Or any percentage or fixed width*/
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Centers the container */
+    overflow: hidden; /* To handle any floating elements */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1200px; /* Same as .main-container */
+    margin: 0 auto; /* Centers the header content */
+    background: #333;
+    color: #ffffff;
+    padding: 0.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: for visibility */
+}
+
+header .logo {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, font-weight 0.3s; /* Smooth transition for color and font-weight */
+}
+
+header nav ul li a:hover {
+    color: #81C7D4; /* Change to desired hover color */
+    font-weight: bold; /* Makes the font bold on hover */
+}
+
+/* Hero Section */
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem; /* Adjust as needed */
+    padding-bottom: 0rem; 
+}
+
+#hero .text {
+    flex: 0.45;
+    padding: 2rem; /* Adjust as needed */
+    text-align: left; /* Text is left-aligned */
+}
+
+#hero .text h1 {
+    font-size: 32px;
+}
+
+#hero .text p {
+    font-size: 20px;
+}
+
+#hero .text .small-text {
+    font-size: 13px;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif; /* Fallback font is sans-serif */
+}
+
+#hero .image {
+    flex: 1;
+    padding: 1rem; /* Adjust as needed */
+}
+
+#hero .image img {
+    max-width: 70%;
+    height: auto;
+    align-self: flex-start;
+}
+
+#animated-text-container {
+    height: 24px; /* Height should match the size*/
+    overflow: hidden; /* Hide the overflow to contain the animation */
+    position: relative;
+}
+
+#portfolio-button {
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    width: 25px; /* Maximum width */
+    height: 25px; /* Maximum height */
+}
+
+#portfolio-button:hover {
+    content: url('images/home/linkedin_blue.png'); /* Change to blue image on hover */
+}
+
+
+@media (max-width: 768px) {
+    #hero .container {
+        flex-direction: column;
+    }
+
+    #hero .image {
+        order: -1; /* Moves the image above the text */
+        padding: 0 0 1rem 0; /* Adjust padding as needed */
+    }
+
+    #hero .text {
+        padding: 1rem 0; /* Adjust padding as needed */
+        text-align: center;
+    }
+
+    #hero .image img {
+        width: 80%; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 1200px) {
+    #hero .text h1 {
+        font-size: 32px;
+    }
+
+    #hero .text p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    #hero .text h1 {
+        font-size: 32px;
+    }
+
+    #hero .text p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero .text h1 {
+        font-size: 32px;
+    }
+
+    #hero .text p {
+        font-size: 20px;
+    }
+}
+
+/* Title Section */
+#animated-text-container {
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+#animated-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-out {
+    animation: slideOut 1s forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideOut {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f1f7ff; /* Or any other color */
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+.skills-header h3 {
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+.skills-text {
+    flex: 2;
+    padding-right: 50px; /* Space between text and skill boxes */
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+
+.skills-text-inner {
+    padding-left: 15px;
+    margin-left: 3px; 
+    margin-top: 10px;/* Adjust based on design */
+    border-left: 2px solid #c0bebe;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.skills-intro {
+    margin-bottom: 0;
+}
+
+.skills-boxes {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-item {
+    background: #fff; /* White background for each skill item */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between skill items */
+    width: calc(50% - 10px); /* Adjust the width as needed, subtracting the margin */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Simple shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.skills-item img {
+    max-width: 50px; /* Example size, adjust as needed */
+    margin-bottom: 10px; /* Space between the image and the text */
+}
+
+.skills-item h3 {
+    margin-bottom: 5px; /* Space between the title and description */
+    color: #333; /* Dark grey color for the title */
+    text-align: center;
+}
+
+.skills-item p {
+    font-size: 14px; /* Smaller font size for the description */
+    color: #666; /* Light grey color for the description */
+    text-align: left;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .skills-content {
+        flex-direction: column;
+    }
+
+    .skills-text {
+        order: 2; /* Reorder text to come after boxes on smaller screens */
+    }
+
+    .skills-text-inner {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .skills-header h3 {
+        text-align: center;
+    }
+    
+    .skills-boxes {
+        order: 1; /* Reorder boxes to come before text on smaller screens */
+        width: 100%;
+    }
+
+    .skills-item {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space between skill items */
+    }
+}
+
+/* About Section */
+#about {
+    padding: 0rem 5%;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+#intro {
+    text-align: left;
+    font-size: 14px;
+}
+
+#about img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+/* Portfolio Section */
+#portfolio {
+    background: #eee;
+    padding: 2rem 5%;
+    margin-top: 1rem;
+}
+
+.portfolio-item {
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Testimonials Section */
+section {
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+#contact form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+}
+
+#contact form button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header nav ul,
+    footer nav ul {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    header nav ul li,
+    footer nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
