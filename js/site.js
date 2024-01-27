@@ -2,6 +2,7 @@ const roles = ["Product Manager.", "Data Analyst.", "Problem Solver."];
 let currentRoleIndex = 0;
 let element;
 
+// Role functionality
 function updateRole() {
     if (!element) {
         element = document.getElementById('animated-text');
@@ -23,13 +24,36 @@ function updateRole() {
         element.classList.remove('slide-in');
     }, 1000); // After the slide-in animation completes
 
-    setTimeout(updateRole, 3500); // Change role every 2 seconds
+    setTimeout(updateRole, 3500); // Change role every 3.5 seconds
+}
+
+// Clock functionality
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    h = h ? h : 12;
+    m = checkTime(m);
+    var txtElement = document.getElementById('txt');
+    if (txtElement) {
+        txtElement.innerHTML = h + ":" + m + " " + ampm;
+    }
+    setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
     updateRole();
+    startTime(); // Start the clock
 });
 
+//Images Hover
 document.querySelector('.portfolio-button').addEventListener('mouseover', function() {
     this.src = 'images/home/linkedin_blue.png';
 });

@@ -14,7 +14,7 @@ body {
 }
 
 .main-container {
-    width: 80%; /* Or any percentage or fixed width*/
+    width: 100%; /* Or any percentage or fixed width*/
     max-width: 1200px; /* Maximum width of the container */
     margin: 0 auto; /* Centers the container */
     overflow: hidden; /* To handle any floating elements */
@@ -30,7 +30,7 @@ header {
     width: 100%;
     max-width: 1200px; /* Same as .main-container */
     margin: 0 auto; /* Centers the header content */
-    background: #333;
+    background: #071037;
     color: #ffffff;
     padding: 0.5rem 0;
     text-align: center;
@@ -43,12 +43,17 @@ header .logo {
 }
 
 header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
+    padding: 0;
 }
 
 header nav ul li {
-    display: inline;
     margin: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 header nav ul li a {
@@ -61,6 +66,10 @@ header nav ul li a {
 header nav ul li a:hover {
     color: #81C7D4; /* Change to desired hover color */
     font-weight: bold; /* Makes the font bold on hover */
+}
+
+#txt {
+    font-size: 16px;
 }
 
 /* Hero Section */
@@ -118,7 +127,7 @@ header nav ul li a:hover {
 }
 
 #portfolio-button:hover {
-    content: url('images/home/linkedin_blue.png'); /* Change to blue image on hover */
+    content: url('../images/home/linkedin_blue.png'); /* Change to blue image on hover */
 }
 
 
@@ -209,7 +218,7 @@ header nav ul li a:hover {
 /* Skills Section */
 #skills {
     background-color: #f1f7ff; /* Or any other color */
-    padding: 50px 0;
+    padding: 25px 0;
 }
 
 .container {
@@ -237,6 +246,7 @@ header nav ul li a:hover {
     padding-right: 50px; /* Space between text and skill boxes */
     text-align: left;
     margin-left: 30px;
+    margin-right: 30px;
     margin-top: 100px;
 }
 
@@ -247,6 +257,7 @@ header nav ul li a:hover {
     border-left: 2px solid #c0bebe;
     padding-right: 20px;
     text-align: left;
+    font-size: 14px;
 }
 
 .skills-intro {
@@ -258,6 +269,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-right: 30px;
 }
 
 .skills-item {
@@ -322,7 +334,7 @@ header nav ul li a:hover {
     text-align: center;
     padding-bottom: 1rem;
     padding-top: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 #intro {
@@ -331,8 +343,14 @@ header nav ul li a:hover {
 }
 
 #about img {
-    max-width: 150px;
-    border-radius: 50%;
+    max-width: 400px;
+    border-radius: 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#intro p {
+    margin-bottom: 0.5rem; 
 }
 
 /* Portfolio Section */
@@ -349,6 +367,205 @@ header nav ul li a:hover {
 .portfolio-item img {
     max-width: 100%;
     height: auto;
+}
+
+/* Clients Section */
+#clients {
+    padding: 20px 0;
+    text-align: center;
+    background: #f9f9f9; /* Or any other background color */
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1px;
+    padding-bottom: 20px;
+}
+
+.clients-header h3 {
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: center; /* Center logos */
+    align-items: flex-end; /* Align logos by their bottom edge */
+    flex-wrap: wrap;
+    row-gap: 2rem; /* Set a gap between the logos */
+    column-gap: 4rem;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Fixed height for all logo containers */
+}
+
+.logo img {
+    max-height: 100%; /* Maximum height for the image */
+    width: auto; /* Auto width to maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clients-logos {
+        justify-content: center; /* Center logos on smaller screens */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clients-logos {
+        justify-content: center; /* Center logos on smaller screens */
+    }
+}
+
+/* Past Projects Section */
+#past-projects {
+    margin-top: 1rem;
+    padding: 50px 0;
+    background-color: #f5f5f5; /* Adjust the background color as needed */
+}
+
+#past-projects .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.past-header h3 {
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 0px;
+}
+
+#past-projects h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates a responsive grid layout */
+    grid-gap: 30px; /* Space between project items */
+}
+
+.project-item-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent elements */
+    display: block; /* Makes the link block-level to contain the entire item */
+}
+
+.project-item {
+    background: #ffffff; /* Background color for project item */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Box-shadow for styling */
+    /* margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;*/
+    overflow: hidden; /* This will contain the content within the boundaries */
+    height: 14em;
+    position: relative; /* Needed for absolute positioning of the pseudo-element for ellipsis */
+    max-width: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scaling */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    background-color: #f6f6f6; /* Change background color on hover */
+}
+
+.project-categories {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.project-category {
+    padding: 5px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    max-width: 9em;
+    display: inline-block;
+}
+
+.project-item h3{
+    white-space: nowrap; /* Ensure the text is in a single line */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis to overflow content */
+    display: block; /* Treat inline elements like block elements */
+    /*max-width: 100%; /* Set a max-width to enforce overflow behavior */
+    max-height: 3em; /* For example, limit to the height of two lines of text */
+    font-size: 1.5rem;
+    color: #333; /* Adjust title color as needed */
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*max-height: 4.8em; /* Adjust based on line-height to show exactly four lines */
+    font-size: 1rem;
+    color: #666; /* Adjust paragraph color as needed */
+    line-height: 1.6;
+    text-align: left;
+    padding: 5px;
+}
+
+.social {
+    background-color: #d8f0d9; /* Green background for social impact category */
+    color: #054406; /* Darker green text */
+}
+
+.mobile {
+    background-color: #cee1f1; /* Blue background for mobile app category */
+    color: #213149; /* Darker blue text */
+}
+
+.web {
+    background-color: #f3f2e0; /* Yellow background for web category */
+    color: #443c37; /* Darker brown text */
+}
+
+.business {
+    background-color: #e0cdfa; /* Purple background for business category */
+    color: #502a67; /* Darker purple text */
+}
+
+.backend {
+    background-color: #f4b2a9; /* Red background for backend category */
+    color: #501a1a; /* Darker red text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+    }
 }
 
 /* Testimonials Section */
@@ -391,10 +608,13 @@ section {
 
 /* Footer */
 footer {
-    background: #333;
+    background: #071037;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer nav ul {
@@ -410,6 +630,14 @@ footer nav ul li {
 footer nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+footer .centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 70px; /* Maximum width */
 }
 
 /* Responsive Media Queries */
