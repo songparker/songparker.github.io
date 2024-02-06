@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Reviews Scraper - Project Detail</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body onload="startTime()">
+
+    <!-- Header -->
+    <div id="header">
+    </div>
+    
+    <!-- Main Content -->
+    <main class="project-detail">
+        <section class="project-header">
+            <h1>🗺️</h1>
+            <h3>Google Map Reviews Scrapper</h3>
+            <img src="../images/projects/googlescrapper.png" alt="Descriptive Text">
+        </section>
+        
+        <section class="project-body">
+            <p><b>Team</b>: Parker Song, Chester Rae de Vera, Monique Dai.</p>
+            <div class="project-summary">
+                <p><b>Summary</b>: 
+                    As a software development intern at <a href="https://innovatank.com/" class="innovatank-link">Innovatank</a>, I developed the "Google Map Reviews Scrapper", a web application using technologies like Google API, Flask, Beautiful Soup, and Selenium in PyCharm. My main tasks involved coding for data extraction and interface design, resulting in an efficient tool for scraping and presenting Google Maps reviews. This project highlighted my skills in web development and user interface creation.</p>
+            </div>
+            
+            <div class="project-links">
+                <p><b>Codebase:</b></p>
+                <a href="https://github.com/songparker/GoogleReviewsScraper" class="codebase-section-link">
+                    <div class="codebase-section">
+                        <div class="text-part">
+                            <p>A web app for scraping and displaying Google Maps reviews using Flask and Google API. - songparker/GoogleReviewsScraper</p>
+                            <div class="github-info">
+                                <img src="../images/projects/github_logo.png" alt="GitHub Logo" class="github-logo">
+                                <span>github.com</span>
+                            </div>
+                        </div>
+                        <div class="image-part">
+                            <img src="../images/projects/innovatank.png" alt="Project Image">
+                        </div>
+                    </div>
+                </a>
+                <!--
+                <a href="https://apps.apple.com" class="project-appstore">App Store Link</a>
+                <a href="https://medium.com" class="project-case-study">Design Case Study</a>
+            </div>-->
+            
+            <div class="project-navigation">
+                <a href="mobilepaypromo.html" class="previous-project">💸 Previous: Mobile Payment Promotion</a>
+                <a href="trainbooking.html" class="next-project">🚂 Next: Train Booking Android App</a>
+            </div>
+        </section>
+        
+        <section class="project-footer">
+            <!-- Additional content like images or text can go here -->
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"><!-- Footer content loaded here --></div>
+
+    <script src="../js/site.js"></script>
+    <script>
+        // Load the header and footer
+        fetch('/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('/partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

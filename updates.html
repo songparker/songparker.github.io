@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates</title>
+	<link rel="stylesheet" href="css/style.css"> <!-- Link to CSS file -->
+    <script src="js/clock.js"></script>
+</head>
+
+<body onload="startTime()">
+
+    <!-- Header -->
+    <div id="header"></div>
+    <!-- <div class="logo">Logo</div>-->
+
+    <!-- Header
+    <header>
+        <div id="txt"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>-->
+
+    <div class="main-container">
+    <!-- About Section -->
+    <section id="about">
+        <h2>Updates</h2>
+        <p>This page details the website's updates in general.</p>
+        <img id="gifImage" src="images/updates/roadmap4.gif" alt="Photo">
+        <div id="intro">
+            <!--<svg width="100%" height="60">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#30CFD0;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#330867;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" /> 
+                    </linearGradient>
+                </defs>
+                <text fill="url(#gradient)" font-size="25" x="0" y="30" font-family="'Open Sans', sans-serif">
+                    Hello hello hello!👋</text>
+            </svg>-->
+            <h3>Version 1.0 Features Overview</h1>
+            <p>Launching with streamlined navigation, concise content and a harmonious style with a touch of geekiness.</p>
+            
+            <p><strong>1. Core Pages</strong></p>
+            <p>Home: Summarizes site content with dynamic sections.</p>
+            <p>About: A brief overview of my personal and professional essence.</p>
+            <p>Plan: Outlines my roadmap and future objectives on this website.</p>
+            
+            <p><strong>2. Projects Section</strong></p>
+            <p>A showcase of my work, demonstrating my expertise through detailed project insights.</p>
+            
+            <p><strong>3. Interactivity & Navigation</strong></p>
+            <p>Intuitive inter-page connectivity with dynamic elements like hover effects and animated transitions to enhance engagement.</p>
+            
+            <p><strong>4. Artistic Style</strong></p>
+            <p>Adopts a unified look through a consistent color scheme, typography, and imagery, reflecting my brand identity.</p>
+            
+            <p>Next steps include adding more projects, a home page makeover, infusing the site with more personality and style, and introducing a blog page as one of the Core Pages. I will consider adjustments based on the feedback received, with the goal of completing the Version 1.1 update by the end of February, 2024.</p>
+        </div>
+        <!--<button>Download Resume</button>-->
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+</div>
+
+    <script src="js/site.js"></script>
+    <script>
+        // Load the header and footer
+        fetch('partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        // replace gif
+        function replaceGifWithStaticImage() {
+            var gifDuration = 4200;
+    
+            setTimeout(function() {
+                var gifImage = document.getElementById('gifImage');
+                gifImage.src = 'images/updates/roadmaplast.png';
+            }, gifDuration);
+    }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            replaceGifWithStaticImage();
+    });
+    </script>
+
+</body>
+</html>

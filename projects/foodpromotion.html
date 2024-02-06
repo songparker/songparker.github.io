@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Food Promotion - Project Detail</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body onload="startTime()">
+
+    <!-- Header -->
+    <div id="header">
+    </div>
+    
+    <!-- Main Content -->
+    <main class="project-detail">
+        <section class="project-header">
+            <h1>🌱</h1>
+            <h3>Surplus Food Promotion</h3>
+            <img src="../images/projects/surplusfoodsales.jpg" alt="Descriptive Text">
+        </section>
+        
+        <section class="project-body">
+            <p><b>Team</b>: Parker Song, Bo Sun, Sam Chen, Ying Fang, Jason.</p>
+            <div class="project-summary">
+                <p><b>Summary</b>: 
+                    At <a href="https://www.shopperplus.ca/policies/about-us" class="innovatank-link">Shopperplus</a>, I led a successful project as a Product Specialist, focusing on database development, web page creation, and operational enhancements. This initiative, involving collaboration across departments like Purchasing, Finance, Warehouse, and UI, not only streamlined internal processes but also significantly reduced trial-and-error costs and minimized food product waste.</p>
+            </div>           
+            <div class="project-links">
+                <p><b>Webpage:</b></p>
+                <a href="https://www.shopperplus.ca/topic-1357-surplus-food-super-sale" class="codebase-section-link">
+                    <div class="codebase-section">
+                        <div class="text-part">
+                            <p>Surplus Food Super Sale. Save money, Stop food waste. 50% off regular prices for our surplus food. 
+                            We guarantee we will not sell you any food that past its expiration date.
+                            </p>
+                            <div class="github-info">
+                                <img src="../images/projects/shopper+_logo.png" alt="Shopperplus Logo" class="github-logo">
+                                <span>shopperplus.ca</span>
+                            </div>
+                        </div>
+                        <div class="image-part">
+                            <img src="../images/projects/shopperspluslogo.png" alt="Project Image">
+                        </div>
+                    </div>
+                </a>
+
+                <div class="project-links">
+                    <p><b>Data Sample:</b></p>
+                    <a href="https://docs.google.com/spreadsheets/d/1OZH5c57NybA9-7dx8q33WtLwOsc5aAmXxv9zkhrvm2k/edit#gid=0">
+                        <div class="codebase-section">
+                            <div class="text-part">
+                                <p>This Google Spreadsheet outlines the data management for our Surplus Food Sales project, highlighting automated strategies in the "parker_weekly" sheet through formulas and functions.
+                                </p>
+                                <div class="github-info">
+                                    <img src="../images/projects/google.png" alt="Shopperplus Logo" class="github-logo">
+                                    <span>google.com</span>
+                                </div>
+                            </div>
+                            <div class="image-part">
+                                <img src="../images/projects/googlesheets_right.png" alt="Project Image">
+                            </div>
+                        </div>
+                    </a>
+
+                <!--<a href="https://apps.apple.com" class="project-appstore">App Store Link</a>
+                <a href="https://medium.com" class="project-case-study">Design Case Study</a>
+            </div>-->
+            
+            <div class="project-navigation">
+                <a href="cruisebooking.html" class="previous-project">🛳️ Previous: Cruise Booking Webpages</a>
+                <a href="mobilepaypromo.html" class="next-project">💸 Next: Mobile Payment Promotion</a>
+            </div>
+        </section>
+        
+        <section class="project-footer">
+            <!-- Additional content like images or text can go here -->
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"><!-- Footer content loaded here --></div>
+
+    <script src="../js/site.js"></script>
+    <script>
+        // Load the header and footer
+        fetch('/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('/partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -35,6 +35,7 @@ header {
     padding: 0.5rem 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: for visibility */
+    min-height: 4rem;
 }
 
 header .logo {
@@ -70,6 +71,17 @@ header nav ul li a:hover {
 
 #txt {
     font-size: 16px;
+    min-height: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#txt {
+    animation: fadeIn 3s ease-in-out forwards;
+    opacity: 0; 
 }
 
 /* Hero Section */
@@ -82,7 +94,7 @@ header nav ul li a:hover {
 }
 
 #hero .text {
-    flex: 0.45;
+    flex: 0.55;
     padding: 2rem; /* Adjust as needed */
     text-align: left; /* Text is left-aligned */
 }
@@ -104,13 +116,15 @@ header nav ul li a:hover {
 
 #hero .image {
     flex: 1;
-    padding: 1rem; /* Adjust as needed */
+    padding: 5rem; /* Adjust as needed */
+    justify-content: center; /* Center-align items horizontally */
+    display: flex; /* Ensure this is a flex container */
+    align-items: center; /* Center-align items vertically */
 }
 
 #hero .image img {
     max-width: 70%;
     height: auto;
-    align-self: flex-start;
 }
 
 #animated-text-container {
@@ -469,14 +483,20 @@ header nav ul li a:hover {
     display: block; /* Makes the link block-level to contain the entire item */
 }
 
+@keyframes rippleEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 .project-item {
     background: #ffffff; /* Background color for project item */
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Box-shadow for styling */
-    /* margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 20px;*/
     overflow: hidden; /* This will contain the content within the boundaries */
     height: 14em;
     position: relative; /* Needed for absolute positioning of the pseudo-element for ellipsis */
@@ -486,7 +506,9 @@ header nav ul li a:hover {
 
 .project-item:hover {
     transform: scale(1.05); /* Slightly enlarge the item */
-    background-color: #f6f6f6; /* Change background color on hover */
+    background: linear-gradient(-45deg, #ffffff, #eefbf6, #e4f1f7, #f9dbcd); /* Water-like gradient */
+    background-size: 180% 180%;
+    animation: rippleEffect 4s linear infinite; /* Ripple effect */
 }
 
 .project-categories {
@@ -495,7 +517,7 @@ header nav ul li a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
-    margin-bottom: 10px;
+    /*margin-bottom: 0px;*/
 }
 
 .project-category {
@@ -517,14 +539,14 @@ header nav ul li a:hover {
     display: block; /* Treat inline elements like block elements */
     /*max-width: 100%; /* Set a max-width to enforce overflow behavior */
     max-height: 3em; /* For example, limit to the height of two lines of text */
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #333; /* Adjust title color as needed */
-    margin-bottom: 10px;
+    /*margin-bottom: 0px;*/
 }
 
 .project-item p {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -536,17 +558,17 @@ header nav ul li a:hover {
     padding: 5px;
 }
 
-.social {
+.web {
     background-color: #d8f0d9; /* Green background for social impact category */
     color: #054406; /* Darker green text */
 }
 
-.mobile {
+.backend {
     background-color: #cee1f1; /* Blue background for mobile app category */
     color: #213149; /* Darker blue text */
 }
 
-.web {
+.database {
     background-color: #f3f2e0; /* Yellow background for web category */
     color: #443c37; /* Darker brown text */
 }
@@ -556,7 +578,7 @@ header nav ul li a:hover {
     color: #502a67; /* Darker purple text */
 }
 
-.backend {
+.mobile {
     background-color: #f4b2a9; /* Red background for backend category */
     color: #501a1a; /* Darker red text */
 }
@@ -569,42 +591,157 @@ header nav ul li a:hover {
 }
 
 /* Testimonials Section */
-section {
-    padding: 2rem 5%;
+#testimonials {
+    display: flex;
+    flex-direction: column; /* Adjust this as needed */
+    padding: 20px 0;
     text-align: center;
+    background: #f5f5f5; /* Or any other background color */
+    margin-top: 1rem;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+.testimonial {
+    flex: 1;
+    padding: 10px; /* Adjust this as needed for spacing between testimonials */
+    /* Optional: Add margin for spacing between the testimonials */
+    margin-left: 30px;
+    margin-right: 0rem; /* For all except the last testimonial */
 }
 
 .testimonial p {
-    font-style: italic;
     margin-bottom: 0.5rem;
 }
 
+#testimonials h3 {
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+
+.testimonial:last-child {
+    margin-right: 40px; 
+} 
+
+.testimonial-text {
+    /* Styles for the testimonial text */
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.testimonial-author {
+    /* font-style: italic; */
+    text-align: right;
+    /*font-weight: bold;*/
+}
+
+.author-link {
+    text-decoration: none; /* Removes underline */
+    color: black; /* Sets the link color, adjust as needed */
+}
+
+.author-link:hover {
+    font-weight: bold;
+    font-style: italic;
+    color: #4583c6; 
+    text-decoration: none; 
+}
+
 /* Contact Section */
-#contact form {
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 0.5rem;
+#contact {
+    background: #f9f9f9;
+    text-align: left;
+    padding: 10px;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem; 
+    /*padding: 10px;*/
+    margin-left:30px;
+}
+
+#contact h3 {
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: left;
+    margin-left: 30px;
+}
+
+
+.contact-option {
+    /* 保持现有的样式，但可能需要调整margin和width */
     border: 1px solid #ccc;
+    background: #fff;
+    padding: 5px; 
+    width: 30%;
+    /* max-width:300px*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease;
+    max-height: 70px;
+    overflow: auto; 
+    margin-bottom: 2rem;
+    /* 可以移除margin-left或margin-right，如果存在的话 */
 }
 
-#contact form button {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
+.contact-option a {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    text-decoration: none;
+    color: #333;
 }
 
-#contact form button:hover {
-    background: #555;
+.contact-option a {
+    flex: 0 0 30%; /* Do not grow, do not shrink, start at 30% width */
+    max-width: 100%; /* Make sure the image is not bigger than its container */
+    height: auto; /* Maintain aspect ratio */
 }
+
+.contact-option a > div {
+    flex: 1; /* Takes up the remaining space */
+    padding-left: 10px; /* Optional: adds some space between the icon and the text */
+}
+
+.contact-subtext {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.contact-option:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(-45deg, #ffffff, #eefbf6, #e4f1f7, #f9dbcd); /* Water-like gradient */
+    background-size: 180% 180%;
+    animation: rippleEffect 4s linear infinite; /* Ripple effect */
+}
+
+.contact-icon {
+    margin-left:20px;
+    max-width: 25px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.contact-text {
+    margin-left:10px;
+}
+
+.contact-subtext {
+    color: #666;
+    font-size: 0.8em;
+}
+
 
 /* Footer */
 footer {
@@ -615,6 +752,7 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 7.3rem;
 }
 
 footer nav ul {
@@ -632,12 +770,45 @@ footer nav ul li a {
     text-decoration: none;
 }
 
-footer .centered-image {
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#footer-text {
+    display: none;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    text-align: center;
+    animation: jump 0.5s ease forwards;
+}
+
+footer:hover #footer-text {
     display: block;
+    opacity: 1;
+}
+
+@keyframes pushDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+#footer-image {
+    display: block; 
     margin-left: auto;
     margin-right: auto;
     margin-top: 5px;
     width: 70px; /* Maximum width */
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    animation: pushDown 0.5s ease forwards;
+}
+
+footer:hover #footer-image {
+    opacity: 0;
+    display: none;
 }
 
 /* Responsive Media Queries */
@@ -653,4 +824,213 @@ footer .centered-image {
         display: block;
         margin: 0.5rem 0;
     }
+}
+
+/* Project Page */
+.project-detail {
+    max-width: 900px;
+    margin: auto;
+    padding: 1em;
+}
+
+.project-header {
+    text-align: Left;
+    padding: 2em 0;
+    /* background-color: #E6F9EB; */
+    margin-top: 5em;
+    margin-bottom: 0em;
+}
+
+.project-header H1{
+    font-size:3em;
+}
+
+.project-header H3{
+    font-size:1.5em;
+    margin-bottom: 1em;
+}
+
+.project-header img{
+    display: block; 
+    margin:auto;
+    max-width:55em;
+}
+
+.project-icon {
+    display: block;
+    margin: 0 auto;
+    width: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+.project-header h1 {
+    color: #333;
+    /* Add other styles like font-family, font-size as needed */
+}
+
+
+.project-body {
+    padding: 0em;
+    text-align: left;
+    /* Add other styles as needed */
+}
+
+.project-summary {
+    margin-top: 1em;
+    padding: 0em;
+    text-align: left;
+    /* Add other styles as needed */
+    margin-bottom: 1em;
+}
+
+.project-links a {
+    display: block;
+    margin: 0em 0;
+    /*color: #007BFF;*/
+    text-decoration: none;
+    margin-bottom:1em;
+}
+
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.project-navigation a {
+    /*color: #007BFF;*/
+    text-decoration: none;
+}
+
+.innovatank-link {
+    color: #838383; 
+    text-decoration: none; 
+}
+
+.innovatank-link:hover {
+    font-weight: bold;
+    font-style: italic;
+    color: #4583c6; 
+    text-decoration: none; 
+}
+
+.codebase-section {
+    display: flex;
+    background-color: #f4f4f4; /* Or any color you prefer */
+    border: 1px solid #ddd; /* Optional border */
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.codebase-section:hover{
+    /*transform: scale(1.05);  Slightly enlarge the item */
+    background: linear-gradient(-45deg, #ffffff, #eefbf6, #e4f1f7, #f9dbcd); /* Water-like gradient */
+    background-size: 180% 180%;
+    animation: rippleEffect 4s linear infinite; /* Ripple effect */
+}
+
+.text-part {
+    flex: 0.7; /* Takes 70% of the space */
+    padding-right: 20px; /* Optional padding between text and image */
+}
+
+.text-part h3 {
+    margin-bottom: 10px;
+}
+
+.text-part p {
+    color: #3a3a3a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*
+.codebase-link {
+    color: #3a3a3a; a
+    text-decoration: none;
+}
+
+.codebase-link:hover {
+    color: #3a3a3a;
+    text-decoration: underline;
+}
+*/
+
+.image-part {
+    flex: 0.3; /* Takes 30% of the space */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.image-part img {
+    max-width: 100%;
+    max-height: 5em;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .image-part {
+        flex: 0.4;
+    }
+    .text-part {
+        flex: 0.6;
+    }
+}
+
+.codebase-section-link {
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.github-info {
+    display: flex; 
+    align-items: center;
+    margin-top: 10px;
+    color: #3a3a3a;
+}
+
+.github-logo {
+    width: 20px; 
+    height: auto; 
+    margin-right: 5px; 
+    color: #3a3a3a;
+}
+
+.codebase-section-link .text-part p {
+    margin: 0;
+}
+
+.codebase-section-link .image-part img {
+    display: block;
+    width: 100%; 
+}
+
+.previous-project,
+.next-project {
+    display: flex;
+    color: #333;
+    background-color: #f4f4f4; /* Or any color you prefer */
+    border: 1px solid #ddd; /* Optional border */
+    margin: 5px 0;
+    padding: 10px;
+    width: 25rem;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.previous-project:hover {
+    /*transform: scale(1.05);  Slightly enlarge the item */
+    background: linear-gradient(-45deg, #ffffff, #eefbf6, #e4f1f7, #f9dbcd); /* Water-like gradient */
+    background-size: 180% 180%;
+    animation: rippleEffect 4s linear infinite; /* Ripple effect */
+}
+
+.next-project:hover {
+    /*transform: scale(1.05);  Slightly enlarge the item */
+    background: linear-gradient(-45deg, #ffffff, #eefbf6, #e4f1f7, #f9dbcd); /* Water-like gradient */
+    background-size: 180% 180%;
+    animation: rippleEffect 4s linear infinite; /* Ripple effect */
 }

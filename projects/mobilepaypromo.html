@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Payment Promotion - Project Detail</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body onload="startTime()">
+
+    <!-- Header -->
+    <div id="header">
+    </div>
+    
+    <!-- Main Content -->
+    <main class="project-detail">
+        <section class="project-header">
+            <h1>💸</h1>
+            <h3>Mobile Payment Promotion</h3>
+            <img src="../images/projects/wechatpayproject.jpg" alt="Descriptive Text">
+            <br/>
+            <img src="../images/projects/alipayprojet.jpg" alt="Descriptive Text">
+        </section>
+        
+        <section class="project-body">
+            <p><b>Team</b>: Parker Song, Puxin Zhao, Lei Wang, Yan Chen.</p>
+            <div class="project-summary">
+                <p><b>Summary</b>: 
+                    At <a href="https://www.uboxol.com/help/aboutus.html" class="innovatank-link">Ubox</a>, I managed strategy, execution, and database design, helping grow WeChat Pay and Alipay's user bases by over 300,000, while also enhancing Ubox's visibility and sales. My efforts supported the development of mobile payment habits among users through strategic partnerships.</p>
+            </div>           
+            <div class="project-links">
+                <p><b>Presentation Sample:</b></p>
+                <a href="https://docs.google.com/presentation/d/1doAN05mUqJxFfNAyL5LPbWusj-Pl0Ay0OfsZchAIgDw/edit#slide=id.p1" class="codebase-section-link">
+                    <div class="codebase-section">
+                        <div class="text-part">
+                            <p>This project's samples include strategy, UI design, offline materials, data needs, daily reports, outcomes, and live event coverage.
+                            </p>
+                            <div class="github-info">
+                                <img src="../images/projects/google.png" alt="Google Logo" class="github-logo">
+                                <span>google.com</span>
+                            </div>
+                        </div>
+                        <div class="image-part">
+                            <img src="../images/projects/googleslides.png" alt="Project Image">
+                        </div>
+                    </div>
+                </a>            
+
+                <!--<a href="https://apps.apple.com" class="project-appstore">App Store Link</a>
+                <a href="https://medium.com" class="project-case-study">Design Case Study</a>
+            </div>-->
+            
+            <div class="project-navigation">
+                <a href="foodpromotion.html" class="previous-project">🌱 Previous: Surplus Food Promotion</a>
+                <a href="googlescraper.html" class="next-project">🗺️ Next: Google Map Reviews Scrapper</a>
+            </div>
+        </section>
+        
+        <section class="project-footer">
+            <!-- Additional content like images or text can go here -->
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"><!-- Footer content loaded here --></div>
+
+    <script src="../js/site.js"></script>
+    <script>
+        // Load the header and footer
+        fetch('/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        fetch('/partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

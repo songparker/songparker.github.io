@@ -1,5 +1,5 @@
-const roles = ["Product Manager.", "Data Analyst.", "Problem Solver."];
-let currentRoleIndex = 0;
+const roles = ["Product Manager.", "Data Analyst.", "Frontend Developer."];
+let currentRoleIndex = 2;
 let element;
 
 // Role functionality
@@ -60,3 +60,14 @@ document.querySelector('.portfolio-button').addEventListener('mouseover', functi
 document.querySelector('.portfolio-button').addEventListener('mouseout', function() {
     this.src = 'images/home/linkedin.png';
 });
+
+/*//Gif transfer
+document.addEventListener('DOMContentLoaded', function () {
+    var gifDuration = 5000;
+
+    setTimeout(function() {
+        var gifImage = document.getElementById('gifImage');
+        console.log('Replacing GIF now');
+        gifImage.src = 'images/updates/roadmaplast.png';
+    }, gifDuration);
+});*/
