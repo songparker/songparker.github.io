@@ -1,4 +1,4 @@
-const roles = ["Product Manager.", "Data Analyst.", "Frontend Developer."];
+const roles = ["Full Stack Developer.", "Product Manager.", "Data Analyst." ];
 let currentRoleIndex = 2;
 let element;
 
